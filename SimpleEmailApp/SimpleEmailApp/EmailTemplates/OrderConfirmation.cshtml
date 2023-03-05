@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+    <style type="text/css">
+        /* Define your email styles here */
+    </style>
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <p>Dear @Model.FirstName,</p>
+    <p>Thank you for your recent order. Your order number is @Model.OrderNumber and was placed on @Model.OrderDate.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderItems)
+            {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+                <td>@item.TotalPrice</td>
+            </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Order Total:</td>
+                <td>@Model.OrderTotal</td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>Shipping Address: @Model.ShippingAddress</p>
+    <p>Billing Address: @Model.BillingAddress</p>
+</body>
+</html>
