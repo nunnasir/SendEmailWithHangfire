@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OTP Verification Email</title>
+	<style>
+		body {
+			background-color: #f7f7f7;
+			font-family: Arial, sans-serif;
+			color: #333333;
+			font-size: 16px;
+			line-height: 1.6;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			margin: 0 auto;
+			max-width: 600px;
+			padding: 20px;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: #333333;
+			font-family: Arial, sans-serif;
+			font-weight: 600;
+			line-height: 1.2;
+			margin: 10px 0;
+		}
+
+		p {
+			margin: 10px 0;
+		}
+
+		.btn {
+			background-color: #007bff;
+			border-radius: 5px;
+			color: #ffffff;
+			display: inline-block;
+			font-size: 16px;
+			font-weight: 600;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+		}
+
+		.btn:hover {
+			background-color: #0069d9;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>OTP Verification</h1>
+		<p>Hello,</p>
+		<p>Your OTP is: <strong>@Model.OTP</strong></p>
+		<p>Please enter this code on the verification page to complete the process.</p>
+		<br>
+		<p>If you did not initiate this request, please ignore this email.</p>
+		<br>
+		<p>Thank you!</p>
+		<br>
+		<a href="#" class="btn">Verify Now</a>
+	</div>
+</body>
+</html>

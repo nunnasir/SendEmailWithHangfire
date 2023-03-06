@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Order Confirmation Email</title>
+	<style>
+		body {
+			background-color: #f7f7f7;
+			font-family: Arial, sans-serif;
+			color: #333333;
+			font-size: 16px;
+			line-height: 1.6;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			margin: 0 auto;
+			max-width: 600px;
+			padding: 20px;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: #333333;
+			font-family: Arial, sans-serif;
+			font-weight: 600;
+			line-height: 1.2;
+			margin: 10px 0;
+		}
+
+		p {
+			margin: 10px 0;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: 20px 0;
+			width: 100%;
+		}
+
+		table th, table td {
+			border: 1px solid #dddddd;
+			padding: 8px;
+			text-align: left;
+			vertical-align: top;
+		}
+
+		table th {
+			background-color: #f7f7f7;
+			font-weight: 600;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Order Confirmation</h1>
+		<p>Hello @Model.FirstName,</p>
+		<p>Thank you for your order. Your order details are below:</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Product Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.OrderDetails)
+				{
+					<tr>
+						<td>@item.ProductName</td>
+						<td>@item.Quantity</td>
+						<td>@item.Price</td>
+						<td>@item.Total</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+		<p>Your order will be shipped to:</p>
+		<p>@Model.ShippingAddress</p>
+		<br>
+		<p>Thank you for shopping with us!</p>
+	</div>
+</body>
+</html>
